@@ -12,103 +12,55 @@
   <title>JS Array Carousel</title>
 </head>
 <body>
-  <div class="container">
-    <div class="slider">
-      <div class="slider-left">
-        <!-- <div class="item active">
-          <img src="img/01.jpg" alt="">
-          <div class="item-info">
-            <div class="item-title">
-              Svezia
-            </div>
-            <div class="item-text">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum corporis.
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <img src="img/02.jpg" alt="">
-          <div class="item-info">
-            <div class="item-title">
-              Svizzera
-            </div>
-            <div class="item-text">
-              Lorem ipsum 
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <img src="img/03.jpg" alt="">
-          <div class="item-info">
-            <div class="item-title">
-              Gran Bretagna
-            </div>
-            <div class="item-text">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <img src="img/04.jpg" alt="">
-          <div class="item-info">
-            <div class="item-title">
-              Germania
-            </div>
-            <div class="item-text">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <img src="img/05.jpg" alt="">
-          <div class="item-info">
-            <div class="item-title">
-              Paradise
-            </div>
-            <div class="item-text">
-              Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,
-            </div>
-          </div>
-        </div> -->
-      </div>
 
-       <div class="slider-list">
-        <!-- <div class="list-item selected">
-          <img src="img/01.jpg" alt="">
-        </div>
+  <div id="app">
 
-        <div class="list-item">
-          <img src="img/02.jpg" alt="">
+    <div class="container">
+      <div class="slider">
+        <div class="slider-left">
+          <div class="item active">
+            <img :src="images[contatore]" alt="">
+            <div class="item-info">
+              <div class="item-title">
+                {{title[contatore]}}
+              </div>
+              <div class="item-text">
+                {{text[contatore]}}
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="list-item">
-          <img src="img/03.jpg" alt="">
+  
+         <div class="slider-list">
+          <div v-for="(image, indice) in images" :class="{selected : indice === contatore}" class="list-item">
+            <img :src="image" alt="">
+          </div>
+  
+          <div @click="prevSlide" class="prev">
+            &uarr;
+          </div>
+  
+          <div @click="nextSlide" class="next">
+            &darr;
+          </div>
+  
         </div>
-        <div class="list-item">
-          <img src="img/04.jpg" alt="">
-        </div>
-        <div class="list-item">
-          <img src="img/05.jpg" alt="">
-        </div> 
-
-        <div class="prev">
-          &uarr;
-        </div>
-
-        <div class="next">
-          &darr;
-        </div> -->
       </div>
     </div>
+
   </div>
+
+
+
   
   <!-- importo vue -->
   <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
   
-  <!-- script con vue -->
+  <!-- mio script con vue -->
   <script src="js/script-vue.js"></script>
   
   <!-- script originale per reference -->
-  <script src="js/script.js"></script>
+  <!-- <script src="js/script.js"></script> -->
 
 </body>
 </html>
