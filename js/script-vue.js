@@ -3,7 +3,7 @@ const app = new Vue({
   el: '#app',
   
   mounted(){
-
+    setInterval(this.nextSlide, 3000)
   },
 
   data: {
